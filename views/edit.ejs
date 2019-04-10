@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Edit Data Guru</h1>
+    <form action="/edit/<%= guru.id %>" method="POST">
+        <label>Nama</label>
+        <input type="text" name="nama" value="<%= guru.nama %>" />
+        <label>Alamat</label>
+        <input type="text" name="alamat" value="<%= guru.alamat %>"/>
+        <label>Pelajaran</label>
+        <input type="text" name="pelajaran" value="<%= guru.pelajaran %>"/>
+        <label>Kelas</label>
+        <input type="integer" name="kelas" value="<%= guru.kelas %>"/>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
