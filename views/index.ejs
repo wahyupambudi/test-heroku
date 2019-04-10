@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+      <link rel='stylesheet' href='/stylesheets/index.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-      </body>
+    <div>
+    <a href="/users/logout/" class="exit"><button onclick="myFunction()"><b>Logout</b></button></a>
+
+    <h4>Anda Login Sebagai </h4>
+</div>
+    <h1>Data Guru</h1>
+        <table>
+    	<thead>
+    		<th>Nama</th>
+    		<th>Alamat</th>
+    		<th>Pelajaran</th>
+            <th>Kelas</th>
+    		<th>Aksi</th>
+    	</thead>
+    	<tbody>
+    		<% for(let i=0; i < gurus.length; i++){ %>
+    		<tr>
+    			<td>asd</td>
+    			<td>asd</td>
+    			<td>asd</td>
+                <td>asd</td>
+    			<td class="tex">
+                    <a href="">Edit</a>
+                    <a href="">Hapus</a>
+                </td>
+    		</tr>
+    		<% } %>
+    	</tbody>
+    </table>
+    <div class="new"><br><br>
+    <p class="new"><b><i>Ingin Menambahkan Data Baru?</i></b></p>
+    <a href="/create"><button type="submit"><b>Disini</b></button></a>
+</div>
+</body>
 </html>
