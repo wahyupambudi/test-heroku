@@ -7,19 +7,19 @@
     <div>
     <a href="/users/logout/" class="exit"><button onclick="myFunction()"><b>Logout</b></button></a>
 
-    <h4>Anda Login Sebagai </h4>
+    <h4>Anda Login Sebagai <%= user.username %></h4>
 </div>
     <h1>Data Guru</h1>
         <table>
-    	<thead>
-    		<th>Nama</th>
-    		<th>Alamat</th>
-    		<th>Pelajaran</th>
+        <thead>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>Pelajaran</th>
             <th>Kelas</th>
-    		<th>Aksi</th>
-    	</thead>
-    	<tbody>
-    		<% for(let i=0; i < gurus.length; i++){ %>
+            <th>Aksi</th>
+        </thead>
+        <tbody>
+            <% for(let i=0; i < gurus.length; i++){ %>
             <tr>
                 <td><%= gurus[i].nama %></td>
                 <td><%= gurus[i].alamat %></td>
@@ -31,7 +31,7 @@
                 </td>
             </tr>
             <% } %>
-    	</tbody>
+        </tbody>
     </table>
     <div class="new"><br><br>
     <p class="new"><b><i>Ingin Menambahkan Data Baru?</i></b></p>

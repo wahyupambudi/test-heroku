@@ -1,23 +1,26 @@
 var express = require('express');
 var router = express.Router();
 const models = require('../models')
+const {checkAuth} = require('../middlewares/auth')
 
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-models.Guru.findAll().then(gurus => {
-		res.render('index',{gurus: gurus})
+//Menampilkan data
+router.get('/', checkAuth, function(req, res, next) {
+	const user = req.session.user
+	models.Guru.findAll().then(gurus => {
+		res.render('index',{gurus: gurus, user: user})
 	}).catch(err => {
 		console.log(err)
 		res.render('index')
 	})
 });
 
+//Membuat data guru baru
 router.get('/create', (req, res) => {
 	res.render('create')
 })
 
-router.post('/create', (req, res) => {
+router.post('/create', checkAuth, (req, res) => {
 	const { nama, alamat, pelajaran, kelas } = req.body
 	models.Guru.create({nama, alamat, pelajaran, kelas}).then(guru => {
 		res.redirect('/')
@@ -27,6 +30,7 @@ router.post('/create', (req, res) => {
 	})
 })
 
+//Mengedit Data Guru
 router.get('/edit/:id', (req, res) => {
 	const guruId = req.params.id
 	models.Guru.findOne({where: {id: guruId}}).then(guru => {
@@ -55,6 +59,7 @@ router.post('/edit/:id', (req, res) => {
 	})
 })
 
+//Menghapus Data Guru
 router.get('/delete/:id', (req, res) => {
 	const guruId = req.params.id
 	models.Guru.findOne({where: {id: guruId}}).then(guru => {
