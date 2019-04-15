@@ -6,7 +6,11 @@
   <body>
     <div>
     <a href="/users/logout/" class="exit"><button onclick="myFunction()"><b>Logout</b></button></a>
-
+<script>
+function myFunction() {
+  alert(" <%= user.username %> You Get Logout Now");
+}
+</script>
     <h4>Anda Login Sebagai <%= user.username %></h4>
 </div>
     <h1>Data Guru</h1>
