@@ -13,6 +13,20 @@ models.Guru.findAll().then(gurus => {
 	})
 });
 
+router.get('/create', (req, res) => {
+	res.render('create')
+})
+
+router.post('/create', (req, res) => {
+	const { nama, alamat, pelajaran, kelas } = req.body
+	models.Guru.create({nama, alamat, pelajaran, kelas}).then(guru => {
+		res.redirect('/')
+	}).catch(err => {
+		console.log(err)
+		res.redirect('/')
+	})
+})
+
 router.get('/delete/:id', (req, res) => {
 	const guruId = req.params.id
 	models.Guru.findOne({where: {id: guruId}}).then(guru => {
