@@ -27,6 +27,34 @@ router.post('/create', (req, res) => {
 	})
 })
 
+router.get('/edit/:id', (req, res) => {
+	const guruId = req.params.id
+	models.Guru.findOne({where: {id: guruId}}).then(guru => {
+		res.render('edit', {guru: guru})
+	}).catch(err => {
+		console.log(err)
+		res.redirect('/')
+	})
+})
+
+router.post('/edit/:id', (req, res) => {
+	const guruId = req.params.id
+	const {nama, alamat, pelajaran, kelas} = req.body
+	models.Guru.findOne({where: {id: guruId}}).then(guru => {
+		return guru.update({
+			nama,
+			alamat,
+			pelajaran,
+			kelas
+		})
+	}).then(updatedGuru => {
+		res.redirect('/')
+	}).catch(err => {
+		console.log(err)
+		res.redirect('/')
+	})
+})
+
 router.get('/delete/:id', (req, res) => {
 	const guruId = req.params.id
 	models.Guru.findOne({where: {id: guruId}}).then(guru => {
