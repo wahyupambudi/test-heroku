@@ -13,4 +13,16 @@ models.Guru.findAll().then(gurus => {
 	})
 });
 
+router.get('/delete/:id', (req, res) => {
+	const guruId = req.params.id
+	models.Guru.findOne({where: {id: guruId}}).then(guru => {
+		return guru.destroy()
+	}).then(guru => {
+		res.redirect('/')
+	}).catch(err => {
+		console.log(err)
+		res.redirect('/')
+	})
+});
+
 module.exports = router;
