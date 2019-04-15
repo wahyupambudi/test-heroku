@@ -19,18 +19,18 @@
     		<th>Aksi</th>
     	</thead>
     	<tbody>
-    		
-    		<tr>
-    			<td>asd</td>
-    			<td>asd</td>
-    			<td>asd</td>
-                <td>asd</td>
-    			<td class="tex">
-                    <a href="">Edit</a>
-                    <a href="">Hapus</a>
+    		<% for(let i=0; i < gurus.length; i++){ %>
+            <tr>
+                <td><%= gurus[i].nama %></td>
+                <td><%= gurus[i].alamat %></td>
+                <td><%= gurus[i].pelajaran %></td>
+                <td><%= gurus[i].kelas %></td>
+                <td class="tex">
+                    <a href="edit/<%=gurus[i].id %>">Edit</a>
+                    <a href="/delete/<%=gurus[i].id %>">Hapus</a>
                 </td>
-    		</tr>
-            
+            </tr>
+            <% } %>
     	</tbody>
     </table>
     <div class="new"><br><br>
