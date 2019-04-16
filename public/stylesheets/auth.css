@@ -18,6 +18,12 @@ a {
 
 #warna{
 	color: white;
+	/* float: left; */
+}
+input {
+	float: right;
+	margin-right: 20px;
+	border-radius: 4px;
 }
 button {
 	background-color: #1B6FA5;
@@ -41,6 +47,7 @@ button {
 	width: 300px;
 	padding: 4px;
 }
+
 
 h4 {
 	color: white;

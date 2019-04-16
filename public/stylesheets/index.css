@@ -1,7 +1,9 @@
 body {
   padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #F3F1F1;
+  background-image: url('bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 h1 {
 	text-align: center;

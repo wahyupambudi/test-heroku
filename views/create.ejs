@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <link rel='stylesheet' href='/stylesheets/style.css' />
+      <link rel='stylesheet' href='/stylesheets/auth.css' />
   </head>
   <body>
     <h1>Buat Data Guru</h1>
+    <div id="box">
     <form action="/create" method="POST">
-        <label>Nama</label>
-        <input type="text" name="nama"/>
-        <label>Alamat</label>
-        <input type="text" name="alamat"/>
-        <label>Pelajaran</label>
-        <input type="text" name="pelajaran"/>
-        <label>Kelas</label>
-        <input type="integer" name="kelas"/>
+        <label id="warna">Nama</label>
+        <input type="text" name="nama"/><br><br>
+        <label id="warna">Alamat</label>
+        <input type="text" name="alamat"/><br><br>
+        <label id="warna">Pelajaran</label>
+        <input type="text" name="pelajaran"/><br><br>
+        <label id="warna">Kelas</label>
+        <input type="integer" name="kelas"/><br><br>
         <button type="submit">Submit</button>
+        <a href="/"><button type="submit">Cancel</button></a>
     </form>
+  </div>
 </body>
 </html>
