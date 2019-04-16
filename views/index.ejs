@@ -28,10 +28,10 @@ function myFunction() {
                 <td><%= gurus[i].nama %></td>
                 <td><%= gurus[i].alamat %></td>
                 <td><%= gurus[i].pelajaran %></td>
-                <td><%= gurus[i].kelas %></td>
+                <td class="tex"><%= gurus[i].kelas %></td>
                 <td class="tex">
-                    <a href="edit/<%=gurus[i].id %>">Edit</a>
-                    <a href="/delete/<%=gurus[i].id %>">Hapus</a>
+                    <a href="edit/<%=gurus[i].id %>"><button type="submit"><b>Edit</b></button></a>
+                    <a href="/delete/<%=gurus[i].id %>"><button type="submit"><b>Hapus</b></button></a>
                 </td>
             </tr>
             <% } %>
